@@ -23,6 +23,7 @@ int main(void)
     int     blue;
     int     i;
     int     count;
+    int     tmp_count;
 
     fd = open("input.txt", O_RDONLY);
     line = get_next_line(fd);
@@ -33,19 +34,20 @@ int main(void)
         red = 0;
         green = 0;
         blue = 0;
+        tmp_count = 0;
         while (line[i])
         {
-            if (red < count_red(&line[i]))
-                red = count_red(&line[i]);
-            else if (green < count_green(&line[i]))
-                green = count_green(&line[i]);
-            else if (blue < count_blue(&line[i]))
-                blue = count_blue(&line[i]);
+            if (red < count_red(&line[i - 3]))
+                red = count_red(&line[i - 3]);
+            else if (green < count_green(&line[i - 3]))
+                green = count_green(&line[i - 3]);
+            else if (blue < count_blue(&line[i - 3]))
+                blue = count_blue(&line[i - 3]);
             i++;
         }
-        printf("%s", line);
-        printf("red : %d, green: %d, blue: %d\n", red, green, blue);
-        count += red * blue * green;
+        tmp_count = red * blue * green;
+        printf("red : %d, green: %d, blue: %d,\tpower: %d\n", red, green, blue, tmp_count);
+        count += tmp_count;
         if (line)
             free(line);
         line = get_next_line(fd);
@@ -53,17 +55,3 @@ int main(void)
     printf("Result: %d\n", count);
     close(fd);
 }
-
-/*int main()
-{
-    char *line = "Game 6: 3 red, 2 blue; 6 green, 13 blue; 11 blue, 1 red; 4 green, 3 red, 5 blue";
-    int i = 0;
-    int green = 0;
-    while (line[i])
-    {
-        if (green < count_green(&line[i]))
-            green = count_green(&line[i]);
-        i++;
-    }
-    printf ("%d", green);
-}*/

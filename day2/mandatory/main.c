@@ -37,12 +37,12 @@ int main(int argc, char **argv)
         blue = 0;
         while (line[i])
         {
-            if (red < count_red(&line[i]))
-                red = count_red(&line[i]);
-            if (green < count_green(&line[i]))
-                green = count_green(&line[i]);
-            if (blue < count_blue(&line[i]))
-                blue = count_blue(&line[i]);
+            if (red < count_red(&line[i - 3]))
+                red = count_red(&line[i - 3]);
+            if (green < count_green(&line[i - 3]))
+                green = count_green(&line[i - 3]);
+            if (blue < count_blue(&line[i - 3]))
+                blue = count_blue(&line[i - 3]);
             i++;
         }
         printf("red : %d, green: %d, blue: %d\n", red, green, blue);
