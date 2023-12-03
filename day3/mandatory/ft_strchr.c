@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.h                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchartie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 14:08:37 by tchartie          #+#    #+#             */
-/*   Updated: 2023/11/20 16:24:16 by tchartie         ###   ########.fr       */
+/*   Created: 2023/10/31 17:08:24 by tchartie          #+#    #+#             */
+/*   Updated: 2023/11/08 16:08:25 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#include "get_next_line.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <stddef.h>
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000000
-# endif //BUFER_SIZE
-
-int search_symbol(char *buffer, int pos, int len);
-
-#endif //MAIN_H
+	i = 0;
+	c = (char)c;
+	while (s[i])
+	{
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if (!c)
+		return ((char *)&s[i]);
+	return (NULL);
+}

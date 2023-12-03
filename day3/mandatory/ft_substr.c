@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchartie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 14:08:37 by tchartie          #+#    #+#             */
-/*   Updated: 2023/12/03 23:51:57 by tchartie         ###   ########.fr       */
+/*   Created: 2023/11/02 18:34:35 by tchartie          #+#    #+#             */
+/*   Updated: 2023/11/07 13:33:57 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
-int main(void)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    int     fd;
-    char    *line;
-	char	*map_line;
-	char	**map;
-	
-	map_line = NULL;
-    fd = open("input.txt", O_RDONLY);
-    line = get_next_line(fd);
-    while (line)
-    {
-		map_line = ft_strjoin(map_line, line);
-        if (line)
-            free(line);
-        line = get_next_line(fd);
-    }
-	map = ft_split(map_line, '\n');
-	printf("%d", travel_map(map));
-    close(fd);
+	char	*str;
+	size_t	i;
+
+	i = 0;
+	if (!s)
+		return (NULL);
+	if ((start > ft_strlen(s)) || len == 0)
+		len = 0;
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (NULL);
+	while (i < len)
+	{
+		str[i] = s[start + i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
