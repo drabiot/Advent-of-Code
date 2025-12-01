@@ -57,11 +57,16 @@ class password {
 
 		void	append(int value);
 		void	readInput(str filename);
+		void	useInput(void);
+
+		int		getPassword(void);
 
 	private:
 		Node<int>*			_dial;
 		Node<int>*			_tail;
+		Node<int>*			_current;
 		std::vector<str>	_input;
+		int					_password;
 };
 
 #endif //PASSWORD_HPP

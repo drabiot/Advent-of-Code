@@ -15,6 +15,14 @@
 int	main(void) {
 	password data(99);
 
-	PRINT GREEN "ok" CENDL;
+	try {
+		data.readInput("input.txt");
+		data.useInput();
+	} catch (const std::exception &e) {
+		ERROR RED "Error: " AND e.what() CENDL;
+	}
+
+	PRINT GREEN "The Password is: " YELLOW AND data.getPassword() CENDL;
+
 	return (0);
 }

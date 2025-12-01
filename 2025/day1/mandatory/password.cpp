@@ -12,7 +12,9 @@
 
 #include "password.hpp"
 
-password::password(int size) : _dial(nullptr), _tail(nullptr) {
+password::password(int size) : _dial(nullptr), _tail(nullptr), _current(nullptr) {
+	this->_password = 0;
+
 	for (int i = 0; i <= size; ++i) {
 		append(i);
 	}
@@ -21,6 +23,9 @@ password::password(int size) : _dial(nullptr), _tail(nullptr) {
     {
         _dial->prev = _tail;
         _tail->next = _dial;
+		_current = _dial;
+		for (int j = 0; j < 50; ++j)
+			_current = _current->next;
     }
 }
 
@@ -57,5 +62,51 @@ void	password::append(int value) {
 }
 
 void	password::readInput(str filename) {
+	std::ifstream	file(filename);
+	str				line;
 
+	if (!file.is_open())
+		throw std::runtime_error("Can't open file");
+
+	while (std::getline(file, line)) {
+		if (!line.empty() && line.back() == '\r')
+			line.pop_back();
+
+		if (line.empty())
+            continue;
+
+		_input.push_back(line);
+	}
+
+}
+
+void	password::useInput(void) {
+	for (size_t i = 0; i < _input.size(); ++i) {
+		bool	dir;							//True = left / False = right
+		int		rotation;						//Number of rotation to do
+
+		str		firstInput = _input[i].substr(0, 1);
+		str		lastInput  = _input[i].substr(1);
+
+		if (firstInput == "L")
+			dir = true;
+		else
+			dir = false;
+
+		rotation = atoi(lastInput.c_str());
+
+		for (int i = 0; i < rotation; ++i) {
+			if (dir)
+				_current = _current->prev;
+			else
+				_current = _current->next;
+		}
+
+		if (_current->data == 0)
+			this->_password++;
+	}
+}
+
+int		password::getPassword(void) {
+	return (this->_password);
 }

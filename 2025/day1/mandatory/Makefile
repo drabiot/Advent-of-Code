@@ -20,7 +20,7 @@ CPP			=	c++
 
 #=========== FLAGS ============#
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -g
+CFLAGS		=	-Wall -Wextra -Werror -std=c++11 -g
 
 #=========== COLOR ============#
 
