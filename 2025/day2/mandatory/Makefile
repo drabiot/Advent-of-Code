@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+         #
+#    By: tchartie <tchartie@student.42.f>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/01 13:00:53 by tchartie          #+#    #+#              #
-#    Updated: 2025/12/01 13:00:53 by tchartie         ###   ########.fr        #
+#    Updated: 2025/12/02 19:43:38 by tchartie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ WHITE		=	\033[0;97m
 
 #========== SOURCES ===========#
 
-SRCS 		=	main.cpp
+SRCS 		=	main.cpp \
+				range.cpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 
