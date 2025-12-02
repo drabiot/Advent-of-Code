@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 19:17:21 by drabiot           #+#    #+#             */
-/*   Updated: 2025/12/02 20:32:03 by tchartie         ###   ########.fr       */
+/*   Updated: 2025/12/02 22:54:33 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void    range::checkRange() {
             if (v >= _values[i].first && v <= _values[i].second) {
 				PRINT MAGENTA AND v CENDL;
 				this->_returnValue += v;
-				PRINT RED AND this->_returnValue CENDL;
+				//PRINT RED AND this->_returnValue CENDL;
 			}
         }
 
