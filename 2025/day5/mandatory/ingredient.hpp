@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   batteries.hpp                                      :+:      :+:    :+:   */
+/*   ingredient.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchartie <tchartie@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 19:18:41 by tchartie          #+#    #+#             */
-/*   Updated: 2025/12/05 14:02:07 by tchartie         ###   ########.fr       */
+/*   Updated: 2025/12/05 14:10:59 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BATTERIES_HPP
-# define BATTERIES_HPP
+#ifndef INGREDIENT_HPP
+# define INGREDIENT_HPP
 
 # include <string>
 # include <iostream>
 # include <fstream>
 # include <vector>
-# include <cmath>
 
 //COLOR
 # define BASE_COLOR	"\033[0m"
@@ -43,6 +42,18 @@ typedef std::string str;
 # define cref(type) const type &
 # define ref(type) type &
 
-unsigned long long	checkVoltage(str filename);
+class	ingredient {
+	public:
+		ingredient(str filename);
+		~ingredient(void);
 
-#endif //BATTERIES_HPP
+		void		checkIngredient(void);
+		long long	getFreshIngredient(void);
+
+	private:
+		std::vector<std::pair<long long, long long>>	_range;
+		std::vector<long long>							_id;
+		long long										_freshIngredient;
+};
+
+#endif //INGREDIENT_HPP

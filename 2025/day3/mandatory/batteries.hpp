@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 19:18:41 by tchartie          #+#    #+#             */
-/*   Updated: 2025/12/03 10:00:51 by tchartie         ###   ########.fr       */
+/*   Updated: 2025/12/05 14:02:14 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,4 @@ typedef std::string str;
 
 int	checkVoltage(str filename);
 
-#endif //RANGE_HPP
+#endif //BATTERIES_HPP

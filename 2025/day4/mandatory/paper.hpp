@@ -6,12 +6,12 @@
 /*   By: tchartie <tchartie@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 19:18:41 by tchartie          #+#    #+#             */
-/*   Updated: 2025/12/04 15:48:18 by tchartie         ###   ########.fr       */
+/*   Updated: 2025/12/05 14:01:49 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BATTERIES_HPP
-# define BATTERIES_HPP
+#ifndef PAPER_HPP
+# define PAPER_HPP
 
 # include <string>
 # include <iostream>
@@ -44,4 +44,4 @@ typedef std::string str;
 
 int	checkPaper(str filename);
 
-#endif //RANGE_HPP
+#endif //PAPER_HPP
