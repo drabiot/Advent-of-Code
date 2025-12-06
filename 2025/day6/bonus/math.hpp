@@ -6,7 +6,7 @@
 /*   By: tchartie <tchartie@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 19:18:41 by tchartie          #+#    #+#             */
-/*   Updated: 2025/12/06 17:59:54 by tchartie         ###   ########.fr       */
+/*   Updated: 2025/12/06 18:11:02 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,10 @@ public:
 
 private:
 
-    // --- stockage des colonnes de chiffres
-    std::vector<std::vector<long long>> _problems;      // chaque colonne -> vecteur de chiffres
-    std::vector<std::vector<long long>> _cephNumbers; // colonne -> vecteur de nombres
-    std::vector<char> _type;                        // opérateurs par colonne
-    long long _solution;
+    std::vector<std::vector<long long>> _problems;
+    std::vector<std::vector<long long>> _cephNumbers;
+    std::vector<char>                   _type;
+    long long                           _solution;
 
     // helper (optionnel)
     long long columnToNumber(const std::vector<int> &col) const;
