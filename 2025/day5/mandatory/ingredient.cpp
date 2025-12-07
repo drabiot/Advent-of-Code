@@ -6,14 +6,14 @@
 /*   By: tchartie <tchartie@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 19:17:21 by drabiot           #+#    #+#             */
-/*   Updated: 2025/12/05 14:23:23 by tchartie         ###   ########.fr       */
+/*   Updated: 2025/12/07 12:48:22 by tchartie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ingredient.hpp"
 
 ingredient::ingredient(str filename) {
-    this->_freshIngredient = 0;
+    this->_split = 0;
     bool    isIds = false;
 
     std::ifstream file(filename);
