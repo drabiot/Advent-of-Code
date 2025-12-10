@@ -6,7 +6,7 @@
 #    By: tchartie <tchartie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/01 13:00:53 by tchartie          #+#    #+#              #
-#    Updated: 2025/12/09 16:03:12 by tchartie         ###   ########.fr        #
+#    Updated: 2025/12/10 17:38:08 by tchartie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ all : 			$(NAME)
 
 $(NAME) :		$(OBJS)
 				@$(CPP) $(CFLAGS) $(OBJS) -o $(NAME)
-				@echo "$(GREEN)Day 9 successfully compiled! $(BASE_COLOR)"
+				@echo "$(GREEN)Day 9 Bonus successfully compiled! $(BASE_COLOR)"
 
 %.o :			%.cpp
 				@echo "$(YELLOW)Compiling: $< $(BASE_COLOR)"
@@ -53,11 +53,11 @@ $(NAME) :		$(OBJS)
 
 clean :
 				@rm -rf $(OBJS)
-				@echo "$(BLUE)Day 9 objects files cleanned! $(BASE_COLOR)"
+				@echo "$(BLUE)Day 9 Bonus objects files cleanned! $(BASE_COLOR)"
 
 fclean :		clean
 				@rm -rf $(NAME)
-				@echo "$(CYAN)Day 9 executable file cleanned! $(BASE_COLOR)"
+				@echo "$(CYAN)Day 9 Bonus executable file cleanned! $(BASE_COLOR)"
 
 re :			fclean all
 
